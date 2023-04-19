@@ -2,7 +2,7 @@ from tkinter import *
 import random
 
 root = Tk()
-root.geometry("100x275")
+root.geometry("200x275")
 root.configure(background='black') 
 
 def roll_dice():
