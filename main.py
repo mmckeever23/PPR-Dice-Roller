@@ -4,6 +4,7 @@ import random
 root = Tk()
 root.geometry("200x250")
 root.title("PPR Dice Roller")
+root.iconbitmap('c:/users/matt.mckeever/OneDrive - NFP Corp/Desktop/MLB.ico')
 root.configure(background='black') 
 root.attributes("-topmost", True)
 
