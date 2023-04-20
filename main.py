@@ -3,6 +3,7 @@ import random
 
 root = Tk()
 root.geometry("200x275")
+root.title("PPR")
 root.configure(background='black') 
 
 def roll_dice():
