@@ -2,8 +2,10 @@ from tkinter import *
 import random
 
 root = Tk()
-root.geometry("200x275")
+root.geometry("200x250")
+root.title("PPR Dice Roller")
 root.configure(background='black') 
+root.attributes("-topmost", True)
 
 def roll_dice():
     d1 = random.choice(my_dice)
