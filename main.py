@@ -1,9 +1,10 @@
 from tkinter import *
 import random
+import tkinter as tk
 
 root = Tk()
-root.geometry("200x250")
-root.title("PPR Dice Roller")
+root.geometry("190x330")
+root.title("")
 root.iconbitmap("C:/Users/mmcke/Desktop/Python Tests/PPR-Dice-Roller/baseball.ico")
 root.configure(background='black') 
 root.attributes("-topmost", True)
@@ -21,29 +22,39 @@ def key_pressed(event):
     roll_dice()
 
 my_dice = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+red = tk.PhotoImage(file="C:/Users/mmcke/Desktop/Python Tests/PPR-Dice-Roller/Dice/red.png").subsample(3, 3)
+yellow = tk.PhotoImage(file="C:/Users/mmcke/Desktop/Python Tests/PPR-Dice-Roller/Dice/yellow.png").subsample(3, 3)
+blue = tk.PhotoImage(file="C:/Users/mmcke/Desktop/Python Tests/PPR-Dice-Roller/Dice/blue.png").subsample(3, 3)
 
-my_frame = Frame(root, bg='black')
+my_frame = Frame(root, bg='black') 
 my_frame.pack()
 my_frame.focus_set()
 
 my_frame.bind('<Key>', key_pressed)
 
-title = Label(my_frame, text='Pocket Pennant Run\nQuick Dice Roller', font=('Helvetica', 15), fg='white', background="black")
+title = Label(my_frame, text='Pocket Pennant Run\nQuick Dice Roller', font=('Helvetica', 13), fg='white', background="black")
 title.grid(row=0, column=0, pady=10)
 
-dice_label1 = Label(my_frame, text=my_dice[0], font=('Helvetica', 25), fg = "red", background="black") 
-dice_label1.grid(row=1, column=0)
+red_die = tk.Label(root, image=red, bd=0, highlightthickness=0)
+red_die.pack()
 
-dice_label2 = Label(my_frame, text=my_dice[1], font=('Helvetica', 25), fg = "yellow", background="black") 
-dice_label2.grid(row=2, column=0)
+yellow_die = tk.Label(root, image=yellow, bd=0, highlightthickness=0)
+yellow_die.pack()
 
-dice_label3 = Label(my_frame, text=my_dice[2], font=('Helvetica', 25), fg = "blue", background="black") 
-dice_label3.grid(row=3, column=0)
+blue_die = tk.Label(root, image=blue, bd=0, highlightthickness=0)
+blue_die.pack()
 
-title = Label(my_frame, text='Press any key to roll', font=('Helvetica', 10), fg='white', background="black")
-title.grid(row=4, column=0, pady=10)
+dice_label1 = Label(root, text=my_dice[0], font=('Helvetica', 15), fg = "white", background="#FF5757", justify="center") 
+dice_label1.place(x=86, y=85)
 
-roll_dice()
+dice_label2 = Label(root, text=my_dice[1], font=('Helvetica', 15), fg = "black", background="#FFDE59", justify="center") 
+dice_label2.place(x=86, y=160)
+
+dice_label3 = Label(root, text=my_dice[2], font=('Helvetica', 15), fg = "white", background="#5271FF", justify="center") 
+dice_label3.place(x=86, y=230)
+
+title = Label(root, text='Press any key to roll', font=('Helvetica', 10), fg='white', background="black")
+title.place(x=36, y=295)
 
 root.mainloop()
 
