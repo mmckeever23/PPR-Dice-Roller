@@ -1,18 +1,19 @@
 from tkinter import *
 import random
 import tkinter as tk
+from PIL import Image, ImageTk
 
 root = Tk()
 root.geometry("190x330")
 root.title("PPR")
-root.iconbitmap("C:/Users/mmcke/Desktop/Python Tests/PPR-Dice-Roller/baseball.ico")
+root.iconbitmap("baseball.ico")
 root.configure(background='black') 
 root.attributes("-topmost", True)
 
 def roll_dice():
-    d1 = random.choice(my_dice)
-    d2 = random.choice(my_dice)
-    d3 = random.choice(my_dice)
+    d1 = random.SystemRandom().randint(1,12)
+    d2 = random.SystemRandom().randint(1,12)
+    d3 = random.SystemRandom().randint(1,12)
     if d1 > 9:
         dice_label1.place(x=81, y=86)
     else:
@@ -33,9 +34,9 @@ def key_pressed(event):
     roll_dice()
 
 my_dice = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-red = tk.PhotoImage(file="C:/Users/mmcke/Desktop/Python Tests/PPR-Dice-Roller/Dice/red.png").subsample(3, 3)
-yellow = tk.PhotoImage(file="C:/Users/mmcke/Desktop/Python Tests/PPR-Dice-Roller/Dice/yellow.png").subsample(3, 3)
-blue = tk.PhotoImage(file="C:/Users/mmcke/Desktop/Python Tests/PPR-Dice-Roller/Dice/blue.png").subsample(3, 3)
+red = ImageTk.PhotoImage(Image.open('dice/red.png').resize((72, 72)))
+yellow = ImageTk.PhotoImage(Image.open('dice/yellow.png').resize((72, 72)))
+blue = ImageTk.PhotoImage(Image.open('dice/blue.png').resize((72, 72)))
 
 my_frame = Frame(root, bg='black') 
 my_frame.pack()
