@@ -33,9 +33,9 @@ def key_pressed(event):
     roll_dice()
 
 my_dice = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-red = ImageTk.PhotoImage(Image.open('red.png').resize((72, 72)))
-yellow = ImageTk.PhotoImage(Image.open('yellow.png').resize((72, 72)))
-blue = ImageTk.PhotoImage(Image.open('blue.png').resize((72, 72)))
+red = ImageTk.PhotoImage(Image.open('dice/red.png').resize((72, 72)))
+yellow = ImageTk.PhotoImage(Image.open('dice/yellow.png').resize((72, 72)))
+blue = ImageTk.PhotoImage(Image.open('dice/blue.png').resize((72, 72)))
 
 my_frame = Frame(root, bg='black') 
 my_frame.pack()
