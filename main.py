@@ -4,14 +4,14 @@ import tkinter as tk
 from PIL import Image, ImageTk
 import winsound
 
+# Application Properties
 root = Tk()
 root.geometry("190x360")
 root.title("PPR")
 root.configure(background='black') 
 root.attributes("-topmost", True)
 
-sound_choice = tk.BooleanVar(value="False")
-
+# Functions
 def key_pressed(event):
     if event.keysym == 'space':
         roll_dice()
@@ -35,7 +35,10 @@ def roll_dice():
     d1 = random.SystemRandom().randint(1,12)
     d2 = random.SystemRandom().randint(1,12)
     d3 = random.SystemRandom().randint(1,12)
-
+    dice_label1.config(text=d1)
+    dice_label2.config(text=d2)
+    dice_label3.config(text=d3)
+    
     if d1 == d2 and d2 == d3:
         red_die.configure(image=gold, bd=0)
         yellow_die.configure(image=gold, bd=0)
@@ -66,24 +69,25 @@ def roll_dice():
     else:
         dice_label3.place(x=86, y=231)
 
-    dice_label1.config(text=d1)
-    dice_label2.config(text=d2)
-    dice_label3.config(text=d3)
+# Frame Properties
+my_frame = Frame(root, bg='black') 
+my_frame.pack()
+my_frame.focus_set()
+my_frame.bind('<Key>', key_pressed)
 
+# Global Variables
+sound_choice = tk.BooleanVar(value="False")
 my_dice = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 red = ImageTk.PhotoImage(Image.open('media/red.png').resize((72, 72)))
 yellow = ImageTk.PhotoImage(Image.open('media/yellow.png').resize((72, 72)))
 blue = ImageTk.PhotoImage(Image.open('media/blue.png').resize((72, 72)))
 gold = ImageTk.PhotoImage(Image.open('media/gold.png').resize((72, 72)))
 
-my_frame = Frame(root, bg='black') 
-my_frame.pack()
-my_frame.focus_set()
-my_frame.bind('<Key>', key_pressed)
-
+# Page Title
 title = Label(my_frame, text='Pocket Pennant Run\nQuick Dice Roller', font=('Helvetica', 13), fg='white', background="black")
 title.grid(row=0, column=0, pady=10)
 
+# 
 red_die = tk.Label(root, image=red, bd=0)
 red_die.pack()
 yellow_die = tk.Label(root, image=yellow, bd=0)
@@ -97,7 +101,6 @@ dice_label3 = Label(root, text=my_dice[2], font=('Helvetica', 15, 'bold'), fg = 
 
 title = Label(root, text='Press space bar to roll', font=('Helvetica', 10), fg='white', background="black", justify="center", anchor='center', pady=10).pack()
 
- 
 button = Button(root, text="Sound Off", bg="black", fg="white", command=sound_toggle)
 button.place(x=64, y=320)
 
