@@ -6,8 +6,9 @@ import winsound
 
 # Application Properties
 root = Tk()
-root.geometry("190x360")
+root.geometry("192x360")
 root.title("PPR")
+root.iconbitmap('media/logo.ico')
 root.configure(background='black') 
 root.attributes("-topmost", True)
 
