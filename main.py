@@ -104,4 +104,5 @@ title = Label(root, text='Press space bar to roll', font=('Helvetica', 10), fg='
 button = Button(root, text="Sound Off", bg="black", fg="white", command=sound_toggle)
 button.place(x=64, y=320)
 
+root.resizable(width=False, height=False)
 root.mainloop()
