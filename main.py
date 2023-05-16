@@ -3,7 +3,6 @@ import random
 import tkinter as tk
 from PIL import Image, ImageTk
 import winsound
-import tkinter.font as font
 
 # Application Properties
 root = Tk()
@@ -12,7 +11,6 @@ root.title("PPR")
 root.iconbitmap('media/logo.ico')
 root.configure(background='black') 
 root.attributes("-topmost", True)
-segoe = font.Font(family='Segoe UI')
 
 # Functions
 def key_pressed(event):
@@ -87,7 +85,7 @@ blue = ImageTk.PhotoImage(Image.open('media/blue.png').resize((72, 72)))
 green = ImageTk.PhotoImage(Image.open('media/green.png').resize((72, 72)))
 
 # Page Title
-title = Label(my_frame, text='Pocket Pennant Run\nQuick Dice Roller', font=('segoe', 13), fg='white', background="black")
+title = Label(my_frame, text='Pocket Pennant Run\nQuick Dice Roller', font=('', 13), fg='white', background="black")
 title.grid(row=0, column=0, pady=10)
 
 # Dice and Dice Labels
@@ -97,11 +95,11 @@ yellow_die = tk.Label(root, image=yellow, bd=0)
 yellow_die.pack()
 blue_die = tk.Label(root, image=blue, bd=0)
 blue_die.pack()
-dice_label1 = Label(root, text=my_dice[0], font=('segoe', 15, 'bold'), fg = "white", background="#FF5757", justify="center") 
-dice_label2 = Label(root, text=my_dice[1], font=('segoe', 15, 'bold'), fg = "black", background="#FFDE59", justify="center") 
-dice_label3 = Label(root, text=my_dice[2], font=('segoe', 15, 'bold'), fg = "white", background="#5271FF", justify="center") 
+dice_label1 = Label(root, text=my_dice[0], font=('', 15, 'bold'), fg = "white", background="#FF5757", justify="center") 
+dice_label2 = Label(root, text=my_dice[1], font=('', 15, 'bold'), fg = "black", background="#FFDE59", justify="center") 
+dice_label3 = Label(root, text=my_dice[2], font=('', 15, 'bold'), fg = "white", background="#5271FF", justify="center") 
 
-title = Label(root, text='Press space bar to roll', font=('segoe', 10), fg='white', background="black", justify="center", anchor='center', pady=10).pack()
+title = Label(root, text='Press space bar to roll', font=('', 10), fg='white', background="black", justify="center", anchor='center', pady=10).pack()
 
 button = Button(root, text="Sound Off", bg="black", fg="white", command=sound_toggle)
 button.place(x=64, y=320)
