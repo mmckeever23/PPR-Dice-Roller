@@ -60,15 +60,15 @@ def roll_dice():
     if d1 > 9:
         dice_label1.place(x=81, y=86)
     else:
-        dice_label1.place(x=86, y=86)
+        dice_label1.place(x=87, y=86)
     if d2 > 9:
         dice_label2.place(x=81, y=159)
     else:
-        dice_label2.place(x=86, y=159)
+        dice_label2.place(x=87, y=159)
     if d3 > 9:
         dice_label3.place(x=81, y=231)
     else:
-        dice_label3.place(x=86, y=231)
+        dice_label3.place(x=87, y=231)
 
 # Frame Properties
 my_frame = Frame(root, bg='black') 
